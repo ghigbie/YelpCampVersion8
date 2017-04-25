@@ -1,15 +1,11 @@
 const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String,
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ]
+var UserSchema = new mongoose.Schema({
+    username: String,
+    password: String
 });
 
-module.exports = mongoose.model("Campground", campgroundSchema);
+UserSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("User", UserSchema);
