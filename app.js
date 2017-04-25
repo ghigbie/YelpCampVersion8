@@ -1,8 +1,8 @@
-const  express     = require("express"),
-       app         = express(),
-       bodyParser  = require("body-parser"),
-       mongoose    = require("mongoose"),
-       passport    = require("passport"),
+const  express       = require("express"),
+       app           = express(),
+       bodyParser    = require("body-parser"),
+       mongoose      = require("mongoose"),
+       passport      = require("passport"),
        LocalStrategy = require("passport-local");
        
 const  Campground  = require("./models/campground"),
